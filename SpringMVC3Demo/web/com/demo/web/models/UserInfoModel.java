@@ -12,6 +12,8 @@ public class UserInfoModel {
 	private String email;
 	@NotEmpty(message="{password.not.empty}")
 	private String password;
+	@NotEmpty(message="{password.not.enpty}")
+	private String confirmPassword;
 	
 	public UserInfoModel(Integer id, String acc, String userName, String email, String password) {
 		super();
@@ -20,6 +22,7 @@ public class UserInfoModel {
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
+		this.confirmPassword = password;
 	}
 
 	public Integer getId() {
@@ -61,4 +64,13 @@ public class UserInfoModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
 }

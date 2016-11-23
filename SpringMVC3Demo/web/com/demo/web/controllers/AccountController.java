@@ -205,6 +205,7 @@ public class AccountController extends BaseController {
     	return "redirect:"+returnUrl; 	
 	}
 	
+	@AuthPassport
 	@RequestMapping(value="/userInfo",method={RequestMethod.GET})
 	public String userInfo(HttpServletRequest request,Model model){
 		Account account = accountService.getUserInfo(request);
