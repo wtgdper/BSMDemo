@@ -92,7 +92,7 @@
 								<i class="icon-edit"></i>${requestScope.permissionMenu.curName}</div>
 						</div>
 						<div class="portlet-body form">
-							<form:form modelAttribute="userInfoModel" class="register-form" method="POST">
+							<form:form modelAttribute="userInfoModel" class="userinfo-form" method="POST">
 								<div class="form-body">
 									<table
 										class="table table-striped table-bordered table-hover table-condensed">

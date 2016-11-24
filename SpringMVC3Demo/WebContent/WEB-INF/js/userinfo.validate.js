@@ -1,7 +1,7 @@
 var userInfoValidate = function() {
 
 	var userInfoValid = function() {
-		$('.register-form').validate({
+		$('.userinfo-form').validate({
 			errorElement : 'span', // default input error message container
 			errorClass : 'help-block', // default input error message class
 			focusInvalid : false, // do not focus the last invalid input
@@ -81,10 +81,10 @@ var userInfoValidate = function() {
 			}
 		});
 
-		$('.register-form input').keypress(function(e) {
+		$('.userinfo-form input').keypress(function(e) {
 			if (e.which == 13) {
-				if ($('.register-form').validate().form()) {
-					$('.register-form').submit();
+				if ($('.userinfo-form').validate().form()) {
+					$('.userinfo-form').submit();
 				}
 				return false;
 			}
@@ -92,10 +92,10 @@ var userInfoValidate = function() {
 
 		/*
 		 * jQuery('#register-btn').click(function () {
-		 * jQuery('.login-form').hide(); jQuery('.register-form').show(); });
+		 * jQuery('.login-form').hide(); jQuery('.userinfo-form').show(); });
 		 * 
 		 * jQuery('#register-back-btn').click(function () {
-		 * jQuery('.login-form').show(); jQuery('.register-form').hide(); });
+		 * jQuery('.login-form').show(); jQuery('.userinfo-form').hide(); });
 		 */
 	}
 
