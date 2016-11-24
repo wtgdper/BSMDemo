@@ -20,6 +20,7 @@ import com.demo.service.interfaces.IOrganizationService;
 import com.demo.service.interfaces.IRoleService;
 import com.demo.web.auth.AccountAuth;
 import com.demo.web.auth.AuthHelper;
+import com.demo.web.models.UserInfoModel;
 import com.demo.dao.interfaces.IAccountDao;
 import com.infrastructure.project.base.service.services.EnableEntityService;
 import com.infrastructure.project.common.exception.EntityOperateException;
@@ -140,6 +141,21 @@ public class AccountService extends EnableEntityService<Integer, Account, IAccou
 		else
 			dbAccount.setOrganization(null);
 		super.update(dbAccount);
+	}
+
+	@Override
+	public boolean midifyUserInfo(UserInfoModel userInfo) throws ValidatException, NoSuchAlgorithmException {
+		Account acc = super.get(userInfo.getId());
+		acc.setName(userInfo.getUserName());
+		acc.setEmail(userInfo.getEmail());
+		acc.setPassword(StringHelper.md5(userInfo.getAcc()+userInfo.getPassword()));
+		try {
+			super.update(acc);
+		} catch (EntityOperateException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 }

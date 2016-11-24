@@ -99,13 +99,13 @@
 										<tbody>
 											<tr>
 												<td>ID</td>
-												<td colspan="2"><input class="form-control" type="text"
-													readonly="readonly" value="${userInfoModel.id}" /></td>
+												<td colspan="2"><form:input path="id" class="form-control" type="text"
+													readonly="true" value="${userInfoModel.id}" /></td>
 											</tr>
 											<tr>
 												<td>ACC</td>
-												<td><input class="form-control" type="text"
-													readonly="readonly" value="${userInfoModel.acc}" /></td>
+												<td><form:input class="form-control" type="text" path="acc"
+													readonly="true" value="${userInfoModel.acc}" /></td>
 												<td rowspan="3">
 													<p>暂无照片</p> <!--img alt="" style="height:120px;width:300px" class="img-responsive" src="<c:url value='/images/gallery/image1.jpg' />"-->
 												</td>

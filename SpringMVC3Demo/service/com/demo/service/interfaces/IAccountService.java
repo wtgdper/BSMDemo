@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.demo.dao.interfaces.IAccountDao;
 import com.demo.model.models.Account;
+import com.demo.web.models.UserInfoModel;
 import com.infrastructure.project.base.service.interfaces.IEnableEntityService;
 //import com.demo.service.models.AccountSearch;
 import com.infrastructure.project.common.exception.EntityOperateException;
@@ -22,4 +23,5 @@ public interface IAccountService extends IEnableEntityService<Integer, Account, 
 	public void saveRegister(Account account) throws NoSuchAlgorithmException, EntityOperateException, ValidatException;
 	public void updateBind(Integer id, Integer roleId, Integer organizationId) throws ValidatException, EntityOperateException;
 	public Account getUserInfo(HttpServletRequest request);
+	public boolean midifyUserInfo(UserInfoModel userInfo) throws ValidatException, NoSuchAlgorithmException;
 }

@@ -72,7 +72,7 @@ public class commontest extends AbstractJUnit4SpringContextTests {
 	public static void main(String[] args) {
 		String pwdmd5="";
 		try {
-			pwdmd5 = StringHelper.md5("liukemng"+"Welcome1");
+			pwdmd5 = StringHelper.md5("AAAA"+"Welcome1");
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

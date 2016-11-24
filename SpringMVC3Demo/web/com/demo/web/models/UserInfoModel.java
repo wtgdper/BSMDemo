@@ -15,6 +15,10 @@ public class UserInfoModel {
 	@NotEmpty(message="{password.not.enpty}")
 	private String confirmPassword;
 	
+	public UserInfoModel(){
+		
+	}
+	
 	public UserInfoModel(Integer id, String acc, String userName, String email, String password) {
 		super();
 		this.id = id;

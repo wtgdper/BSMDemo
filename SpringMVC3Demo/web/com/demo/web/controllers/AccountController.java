@@ -213,4 +213,23 @@ public class AccountController extends BaseController {
 		model.addAttribute("userInfoModel", userInfo);
 		return "account/userInfo";
 	}	
+	
+	@AuthPassport
+	@RequestMapping(value="/userInfo",method={RequestMethod.POST})
+	public String midifyUserInfo(HttpServletRequest request,Model model,@Valid @ModelAttribute("userInfoModel") UserInfoModel userInfo,BindingResult result) throws NoSuchAlgorithmException, ValidatException{
+		if(result.hasErrors()){
+			return userInfo(request,model);
+		}
+		
+		//保存用户信息更改
+		boolean flag = accountService.midifyUserInfo(userInfo);
+		System.out.println(flag);
+		if(flag){
+			
+		}else{
+			
+		}
+		
+		return userInfo(request,model);
+	}
 }  
