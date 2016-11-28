@@ -12,6 +12,8 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import com.demo.dao.interfaces.IAccountDao;
 import com.demo.model.models.Account;
 import com.demo.model.models.Organization;
 import com.demo.model.models.Role;
@@ -21,7 +23,6 @@ import com.demo.service.interfaces.IRoleService;
 import com.demo.web.auth.AccountAuth;
 import com.demo.web.auth.AuthHelper;
 import com.demo.web.models.UserInfoModel;
-import com.demo.dao.interfaces.IAccountDao;
 import com.infrastructure.project.base.service.services.EnableEntityService;
 import com.infrastructure.project.common.exception.EntityOperateException;
 import com.infrastructure.project.common.exception.ValidatException;
@@ -146,6 +147,7 @@ public class AccountService extends EnableEntityService<Integer, Account, IAccou
 	@Override
 	public boolean midifyUserInfo(UserInfoModel userInfo) throws ValidatException, NoSuchAlgorithmException {
 		Account acc = super.get(userInfo.getId());
+		System.out.println(acc.toString());
 		acc.setName(userInfo.getUserName());
 		acc.setEmail(userInfo.getEmail());
 		acc.setPassword(StringHelper.md5(userInfo.getAcc()+userInfo.getPassword()));
